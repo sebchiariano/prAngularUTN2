@@ -1,0 +1,45 @@
+<div class="contenedorProducto">
+
+    <div class="contenedorImagen">
+        <img *ngIf="loading == true" src="assets/images/Loading.gif" alt="Loading..."> 
+        <img src={{producto.photo_url}}/>
+    </div>
+
+    <br>
+
+    <table *ngIf="loading == false">
+        <tr>
+            <td class="titulo">ID</td>
+            <td>{{producto.id}}</td>
+        </tr>
+        <tr>
+            <td class="titulo">Producto</td>
+            <td>{{producto.name}}</td>
+        </tr>
+        <tr>
+            <td class="titulo">Precio</td>
+            <td>{{producto.price | currency}}</td>
+        </tr>
+        <tr>
+            <td class="titulo">Precio al por Mayor</td>
+            <td>{{producto.wholesale_price | currency}}</td>
+        </tr>
+        <tr>
+          <td class="titulo">Descripcion</td>
+          <td>{{producto.description}}</td>
+        </tr>
+        <tr>
+            <td class="titulo">Stock Disponible</td>
+            <td>{{producto.stock}}</td>
+          </tr>
+        <tr>
+            <td class="titulo">Fecha de Ingreso</td>
+            <td>{{producto.date_add}}</td>
+        </tr>
+        <tr>
+            <td class="titulo">Fecha de Modificacion</td>
+            <td>{{producto.date_upd}}</td>
+        </tr>
+      </table>
+   
+</div>

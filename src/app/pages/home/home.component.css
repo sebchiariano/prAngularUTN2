@@ -1,0 +1,31 @@
+
+.contenedorComponente{
+    padding:20px;
+}
+
+.contenedorProductos1{
+    border-top: 3px solid rgb(228, 222, 222);
+    padding-top: 20px;
+}
+
+
+.contenedorProductos2{
+    border-top: 3px solid rgb(228, 222, 222);
+    
+    padding-top: 0;
+}
+
+.divBotonProductos2{
+    display:table-cell;
+}
+
+.contenedorLoading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h5{
+    color:#2586d7;
+}

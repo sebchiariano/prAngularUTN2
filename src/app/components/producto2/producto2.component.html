@@ -1,0 +1,17 @@
+<button class=contenedorProducto routerLink="/detalle/{{producto.id}}" (mouseenter)="hoverEnter()" (mouseleave)="hoverLeave()">
+    
+    <span class="datosProducto">
+        <div class="contenedorImagen">
+            <img src={{producto.photo_url}}/>
+        </div>
+        
+        <p class="nombreProducto"> {{producto.name}}</p>
+        <p class="precioProducto"> {{producto.price | currency }}</p>
+        <br>
+               
+    </span>    
+    <div [class]="hoverClass" *ngIf="hoverClass=='verDetalleHover'" >
+        <p>Ver Detalle</p>
+    </div>
+
+</button>

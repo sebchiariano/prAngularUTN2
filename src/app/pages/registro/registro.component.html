@@ -1,0 +1,83 @@
+<div class="contenedorComponente">
+    <h5>Completá tus datos</h5>
+    <div class="contenedorFormulario">
+
+        <div >
+            <form [formGroup]="miFormulario" (ngSubmit)="registrarse()">
+                
+                <div class="mb-3">
+                    <label class="form-label">Nombre: </label>
+                    <input type="text" formControlName="nombre" class="form-control">
+                    <label class="datoInvalido" *ngIf="miFormulario.get('nombre').errors && miFormulario.get('nombre').dirty">
+                        (*) Campo Obligatorio
+                    </label>
+            
+                </div>
+           
+                <div class="mb-3">
+            
+                    <label class="form-label">Apellido: </label>
+                    <input type="text" formControlName="apellido"  class="form-control">
+                    <label class="datoInvalido" *ngIf="miFormulario.get('apellido').errors && miFormulario.get('apellido').dirty">
+                        (*) Campo Obligatorio
+                    </label>
+            
+                </div>
+            
+                <div class="mb-3">
+                    
+                    <label class="form-label">Telefono: </label>
+                    <input type="text" formControlName="telefono" class="form-control">
+            
+                </div>
+        
+                <div class="mb-3">
+                    
+                    <label class="form-label" >Email: </label>
+                    <input type="text" size="30" formControlName="email" class="form-control">
+                    
+                    <span class="datoInvalido" *ngIf="miFormulario.get('email').dirty">
+                        <label  *ngIf="miFormulario.get('email').hasError('required')">
+                            (*) Campo Obligatorio
+                        </label>
+                        <label  *ngIf="miFormulario.get('email').hasError('email')">
+                            (*) El formato de mail ingresado es invalido
+                        </label>
+                    </span>
+            
+                </div>
+              
+                <div class="mb-3">
+            
+                    <label class="form-label">Password: </label>
+                    <input [type]="tipoVistaPass" formControlName="password"  class="form-control">
+                    <button class="btnVerPass" (click)="verContrasena()"> {{textoBotonVerPass}} </button> 
+            
+                    <span class="datoInvalido" *ngIf="miFormulario.get('password').dirty">
+                        <label  *ngIf="miFormulario.get('password').hasError('required')">
+                            (*) Campo Obligatorio
+                        </label>
+                        <label  *ngIf="miFormulario.get('password').hasError('minlength') || miFormulario.get('password').hasError('maxlength')">
+                            (*)  Contraseña invalida. La contraseña debe tener entre 6 y 10 caracteres
+                        </label>
+                       
+                    </span>
+            
+                </div>
+         
+                <div class="mb-3">
+                    <input  type="submit" value="Registarse" [disabled]="miFormulario.invalid" > 
+                    <label class="datoInvalido" *ngIf="miFormulario.invalid"> 
+                        (*) Datos Invalidos. Corroborar que no falten datos y que los datos ingresados sean correctos para poder registrarte 
+                    </label>
+                </div>
+
+            </form>
+        </div>   
+     
+    
+    
+    </div>
+</div>
+
+

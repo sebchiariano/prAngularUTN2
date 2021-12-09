@@ -1,0 +1,62 @@
+.datoInvalido{
+    font-size: 10px;
+    color: rgb(161, 161, 161);
+}
+  
+.btnVerPass{
+    background-color: #2175bc;
+    color:#fff;
+    font-size: 11px;
+}
+  
+.btnVerPass:hover {
+      background-color: #2586d7;
+}
+  
+.contenedorFormulario {
+    border-top: 1px solid rgb(228, 222, 222);
+    border-right: 1px solid rgb(228, 222, 222);
+    border-bottom: 1px solid rgb(228, 222, 222);
+    border-left: 1px solid rgb(228, 222, 222);
+  
+    box-shadow: 0 0 6px #2175bc ;
+  
+    font-size: 12px;
+  
+    background-color:lightgray ;
+  
+   
+    
+}
+  
+form {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    padding:10px;
+}
+  
+.contenedorComponente{
+    padding-top: 6%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+  
+input[type="text"],  input[type="password"]{
+  
+    border-top: 1px solid rgb(228, 222, 222);
+    border-right: 1px solid rgb(228, 222, 222);
+    border-bottom: 1px solid rgb(228, 222, 222);
+    border-left: 1px solid rgb(228, 222, 222);
+  
+    box-shadow: 0 0 6px #2175bc ;
+  
+    font-size: 10px;
+    color:gray;
+    font-weight: lighter;
+}
+  
+h5, form{
+    color:#2586d7;
+}

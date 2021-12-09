@@ -1,0 +1,40 @@
+img{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 460px;   
+    max-height:300px;
+}
+
+table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 12px;
+}
+  
+table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.479) ;
+}
+  
+th, td {
+    padding: 15px;
+}
+
+.titulo{
+      font-weight: bold;
+}
+
+.contenedorImagen{
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgb(228, 222, 222);
+    border-right: 1px solid rgb(228, 222, 222);
+    border-bottom: 1px solid rgb(228, 222, 222);
+    border-left: 1px solid rgb(228, 222, 222);
+
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.479) ;
+}
+  

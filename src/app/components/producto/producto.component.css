@@ -1,0 +1,105 @@
+.contenedorProducto{
+
+    transition: box-shadow .1s;
+
+    border-top: 3px solid rgb(228, 222, 222);
+    border-right: 3px solid rgb(228, 222, 222);
+    border-bottom: 3px solid white;
+    border-left: 3px solid rgb(228, 222, 222);
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    width: 90%;
+    background-color: white; 
+
+    position: relative;
+    display:inline-flex;
+}
+
+.nombreProducto{
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 0;
+    text-align: left; 
+}
+
+.precioProducto{
+  color:#2175bc;
+  font-size: 18px;
+  padding-left: 0;  
+  text-align: left; 
+}
+
+.contenedorProducto:hover {
+    
+    margin-top:-2px;
+    padding-bottom:12px;
+    /*box-shadow: 0 0 6px rgba(0, 0, 0, 0.479) ;*/
+    box-shadow: 0 0 6px #2175bc ;
+    
+    margin-bottom: 0px;
+}
+
+.datosProducto{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;   
+   
+    padding-left: 20px;
+    display: table-row-group;
+
+}
+
+.verDetalleHover{
+
+    height: 50px;
+
+    position:absolute;
+    width: 20%;
+    height: 100%;
+   
+    right:0px;
+
+    background: linear-gradient(270deg, lightgray 0%, white 100% );
+
+    font-size: 15px;
+    
+    color:gray;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+p{
+    padding-left: 0px;
+}
+
+.contenedorImagen{
+     /* centrar*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 220px;
+    height:170px;
+ 
+
+    border-top: 1px solid rgb(228, 222, 222);
+    border-right: 1px solid rgb(228, 222, 222);
+    border-bottom: 1px solid rgb(228, 222, 222);
+    border-left: 1px solid rgb(228, 222, 222);
+    background-color:white;
+    box-shadow: 0 0 6px white;
+   
+}
+
+img{
+    
+    max-width:200px;
+    
+    max-height:150px; 
+
+}

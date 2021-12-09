@@ -1,0 +1,49 @@
+<div class="contenedorComponente">
+    <div class="contenedorLogin">
+        <div class="contenedorTitulo">
+            <h5>Login</h5>
+        </div>
+        <div class="contenedorFormulario">
+            <form [formGroup]="formularioLogin" (ngSubmit)="login()">
+                <div class="mb-3">
+                    
+                    <label class="form-label">Email: </label>
+                    <input type="text" formControlName="email" size="36" class="form-control form-control-sm">
+                    
+                    <div class="datoInvalido" *ngIf="formularioLogin.get('email').dirty">
+                        <p  *ngIf="formularioLogin.get('email').hasError('required')">
+                            (*) Campo Obligatorio
+                        </p>
+                        <p  *ngIf="formularioLogin.get('email').hasError('email')">
+                            (*) El formato de mail ingresado es invalido
+                        </p>
+                    </div>
+            
+                </div>
+               
+                <div class="mb-3">
+            
+                    <label class="form-label"> Password: </label>
+                    <input [type]="tipoVistaPass" formControlName="password" class="form-control form-control-sm">
+                    <button class="btnVerPass" (click)="verContrasena()"> {{textoBotonVerPass}} </button> 
+                        
+            
+                    <div class="datoInvalido" *ngIf="formularioLogin.get('password').dirty">
+                        <p  *ngIf="formularioLogin.get('password').hasError('required')">
+                            (*) Campo Obligatorio
+                        </p>
+                        <p  *ngIf="formularioLogin.get('password').hasError('minlength') || formularioLogin.get('password').hasError('maxlength')">
+                            (*)  Contraseña invalida. La contraseña debe tener entre 6 y 10 caracteres
+                        </p>
+                       
+                    </div>
+            
+                </div>
+          
+                <div>
+                    <input  type="submit" value="Ingresar" [disabled]="formularioLogin.invalid"> 
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
