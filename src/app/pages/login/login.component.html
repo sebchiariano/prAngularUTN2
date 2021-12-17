@@ -25,7 +25,7 @@
             
                     <label class="form-label"> Password: </label>
                     <input [type]="tipoVistaPass" formControlName="password" class="form-control form-control-sm">
-                    <button class="btnVerPass" (click)="verContrasena()"> {{textoBotonVerPass}} </button> 
+                    <button type="button" class="btnVerPass" (click)="verContrasena()"> {{textoBotonVerPass}} </button> 
                         
             
                     <div class="datoInvalido" *ngIf="formularioLogin.get('password').dirty">

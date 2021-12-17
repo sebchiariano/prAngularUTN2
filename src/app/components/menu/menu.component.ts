@@ -22,7 +22,6 @@ export class MenuComponent implements OnInit {
 
   logout(){
     this._usuarios.logout();
-    console.log("entro logout")
   }
 
 

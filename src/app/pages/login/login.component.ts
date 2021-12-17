@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
   login(){  
     this._usuarios.login(this.formularioLogin.value.email, this.formularioLogin.value.password)
     console.log(this.formularioLogin.value)
-    console.log("Entro LOGIN")
 
   }
     
