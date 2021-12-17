@@ -27,3 +27,12 @@ div{
     background-color: #2175bc;
     padding-top: 18px;
 }
+
+button{
+    padding:0%;
+    border-color: #2175bc;
+    background-color: #2175bc;
+    color: #fff;
+    box-shadow: 0 0 0px #2175bc ;
+
+}

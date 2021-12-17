@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms'
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
+
 })
 
 export class LoginComponent implements OnInit {
@@ -17,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   //CONSTRUCTOR
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  constructor(private formConstr: FormBuilder) 
+  constructor(private formConstr: FormBuilder, private _usuarios:UsuariosService) 
   {
       this.formularioLogin = this.formConstr.group({
 
@@ -33,8 +35,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   login(){  
+    this._usuarios.login(this.formularioLogin.value.email, this.formularioLogin.value.password)
     console.log(this.formularioLogin.value)
+    console.log("Entro LOGIN")
+
   }
     
   verContrasena()

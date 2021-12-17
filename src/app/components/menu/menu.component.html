@@ -2,7 +2,8 @@
 <div >
     <ul>
         <li routerLink="/"> Inicio </li>
-        <li routerLink="/ingresar"> Ingresar </li>
-        <li routerLink="/registrarse"> Registrarse </li>
+        <li *ngIf="!isLogin" routerLink="/ingresar"> Ingresar </li>
+        <li *ngIf="!isLogin" routerLink="/registrarse"> Registrarse </li>
+        <li *ngIf="isLogin" routerLink="/" (click)="logout()"> Salir </li>
     </ul>
 </div>
