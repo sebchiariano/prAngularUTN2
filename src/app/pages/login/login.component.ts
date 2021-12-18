@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
   passVisible: boolean =false;
   textoBotonVerPass:string = 'Ver Contraseña';
 
+  
+
   //CONSTRUCTOR
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   constructor(private formConstr: FormBuilder, private _usuarios:UsuariosService) 

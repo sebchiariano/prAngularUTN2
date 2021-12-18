@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 
+import { userI } from '../interfaces/userI';
 
 import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
@@ -26,7 +27,12 @@ import {
   onAuthStateChanged
 } from '@angular/fire/auth';
 
+
+
+import { Firestore, collectionData, collection,  query, where, orderBy , getDocs, doc, getDoc  } from '@angular/fire/firestore';
+
 import 'rxjs/add/operator/switchMap';
+
 
 @Injectable({
   providedIn: 'root'
@@ -36,35 +42,34 @@ export class UsuariosService {
 
   authenticationState = new BehaviorSubject((localStorage.getItem("login")?true:false));
   
+  uidUser:string=localStorage.getItem("uidUser");
 
-  user$: Observable<User | null>;
+  
 
   constructor(
     private afAuth: Auth,
-    private router: Router
+    private router: Router,
+    private firestore:Firestore 
   ) 
-  { 
-    this.user$ = user(afAuth);
-
-  // or use this version...
-  this.user$ = authState(afAuth);
-
-  // or use this version...
-  this.user$ = new Observable((observer: any) =>
-    onAuthStateChanged(afAuth, observer)
-  );
-
-
+  {
+ 
   }
   
   login(email:string, password:string){
-    
-   
+
+
+
     signInWithEmailAndPassword(this.afAuth, email, password)
     .then(value => {
-      this.authenticationState.next(true);
+      this.authenticationState.next(true); //cambiar autenticacion estado a true
+
       localStorage.setItem("login","true");
+      localStorage.setItem("uidUser",value.user.uid);
+
+      console.log("data", this.getUserData())
       this.router.navigate(['/']);
+
+      this.uidUser=value.user.uid;
     })
     .catch(err => {
       console.log('Something went wrong: ', err.message);
@@ -76,10 +81,38 @@ export class UsuariosService {
 
     });
 
-    /*
-    this.authenticationState.next(true);
-    localStorage.setItem("login","true");
-    */
+  }
+
+  async getUserData(){
+    const q = query(collection(this.firestore, "usuarios"), where("userId", "==",this.uidUser));
+
+    const querySnapshot = await getDocs(q);
+
+    var userData:userI;
+
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+
+      console.log("user", doc.data());
+      console.log("userapellido", doc.data().apellido);
+
+      
+      userData={
+
+        nombre:doc.data().nombre,
+        apellido:doc.data().apellido,
+        telefono:doc.data().telefono,
+        email:doc.data().email,
+        perfil:doc.data().perfil,
+        userId:doc.data().userId
+
+      }
+      
+     
+      console.log("userDATAINT",userData);
+    });
+
+    return userData;
   }
 
   logout(){
@@ -87,13 +120,11 @@ export class UsuariosService {
     this.afAuth
     .signOut().then(() => {
          this.authenticationState.next(false);
-         localStorage.removeItem("login")
+         localStorage.removeItem("login");
+         localStorage.removeItem("uidUser");
     });
 
-    /*
-    this.authenticationState.next(false)
-    localStorage.removeItem("login")
-    */
+  
   }
 
   isAuthenticated(){
@@ -110,7 +141,7 @@ export class UsuariosService {
     
     createUserWithEmailAndPassword( this.afAuth, email, password)
     .then(value => {
-     console.log('Sucess', value);
+     console.log('Succes', value);
     })
     .catch(error => {
       console.log('Something went wrong: ', error);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import { userI } from 'src/app/interfaces/userI';
 
 @Component({
   selector: 'app-menu',
@@ -10,6 +11,8 @@ export class MenuComponent implements OnInit {
 
   isLogin:boolean = false;
 
+  usuarioLogueado:string;
+
   constructor(private _usuarios:UsuariosService) { 
 
     this._usuarios.isAuthenticate()
@@ -17,15 +20,29 @@ export class MenuComponent implements OnInit {
 
       this.isLogin=login;
 
+    
+
     })
+
+    if(this.isLogin)
+    {
+      this.setLoggedUser()
+    }
+    
+  }
+
+
+  ngOnInit(): void {
+    
   }
 
   logout(){
     this._usuarios.logout();
   }
 
-
-  ngOnInit(): void {
+  async setLoggedUser(  ){
+    
+    this.usuarioLogueado= (await this._usuarios.getUserData()).email;
+    
   }
-
 }

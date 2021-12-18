@@ -16,11 +16,15 @@ import { Producto2Component } from './components/producto2/producto2.component';
 
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule  } from '@angular/common/http';
+
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideAuth,getAuth  } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -43,7 +47,11 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatMenuModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
