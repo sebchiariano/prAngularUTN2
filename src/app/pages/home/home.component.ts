@@ -11,7 +11,7 @@ import { ProductosService } from 'src/app/services/productos.service';
 export class HomeComponent implements OnInit {
 
   productos;
-  productosDestacados;
+  //productosDestacados;
   load:boolean=true;
 
   //CONSTRUCTOR
@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  /*
   async getProductosDestacados()
   {
     try
@@ -56,7 +57,7 @@ export class HomeComponent implements OnInit {
       console.log(e);
     }
   }
-
+*/
    
 
 }

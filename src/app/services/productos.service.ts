@@ -17,15 +17,28 @@ export class ProductosService {
 
   //FUNCIONES
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
+  //NODE
   getAllProducts(){
-    return this.http.get("https://jsonfy.com/items").toPromise();
+    return this.http.get("http://localhost:3000/products").toPromise();
   }
 
-  getAllProductsDestacados(){ //Se deberia consultar un endpoint que traiga los destacados, al no existir en la api de jsonfy se utiliza el mismo endpoint de productos a modo de ejemplo
-    return this.http.get("https://jsonfy.com/items").toPromise();
-  }
-
+ 
   getById(id:string)
+  {
+    return this.http.get("http://localhost:3000/products/"+id).toPromise();
+  }
+
+  //JSONFY
+  getAllProductsJSONFY(){
+    return this.http.get("https://jsonfy.com/items").toPromise();
+  }
+
+  getAllProductsDestacadosJSONFY(){ //Se deberia consultar un endpoint que traiga los destacados, al no existir en la api de jsonfy se utiliza el mismo endpoint de productos a modo de ejemplo
+    return this.http.get("https://jsonfy.com/items").toPromise();
+  }
+
+  getByIdJSONFY(id:string)
   {
     return this.http.get("https://jsonfy.com/items/"+id).toPromise();
   }

@@ -29,14 +29,15 @@ export class DetalleComponent implements OnInit {
     try{  
       const id= this.activatedRoute.snapshot.paramMap.get("id")
       const productoAux= await this.productosService.getById(id);
+    
+      this.producto=JSON.parse(JSON.stringify(productoAux));
       
-      this.producto=productoAux[0];
       this.loading=false;
 
     }
     catch(e)
     {
-      
+      console.log(e);
     }
   }
 

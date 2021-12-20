@@ -1,12 +1,12 @@
-<button class=contenedorProducto routerLink="/detalle/{{producto.id}}" (mouseenter)="hoverEnter()" (mouseleave)="hoverLeave()">
-    
+<button class=contenedorProducto routerLink="/detalle/{{producto._id}}" (mouseenter)="hoverEnter()" (mouseleave)="hoverLeave()">
+   
     <div class="contenedorImagen">
-        <img src={{producto.photo_url}}/>
+        
+        <img src={{producto.pictures[0].secure_url}}/>
     </div>
     
     <div class="datosProducto">
-        
-        <p class="nombreProducto"> {{producto.name}}</p>
+        <p class="nombreProducto"> {{producto.title}}</p>
         <p class="precioProducto"> {{producto.price | currency }}</p>
                
     </div>    

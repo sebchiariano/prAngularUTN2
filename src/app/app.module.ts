@@ -9,10 +9,12 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { DetalleComponent } from './pages/detalle/detalle.component';
 import { E404Component } from './pages/e404/e404.component';
+import { CompraComponent } from './pages/compra/compra.component';
 
 import { MenuComponent } from './components/menu/menu.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { Producto2Component } from './components/producto2/producto2.component';
+
 
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule  } from '@angular/common/http';
@@ -27,6 +29,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +41,7 @@ import {MatMenuModule} from '@angular/material/menu';
     Producto2Component,
     DetalleComponent,
     E404Component,
+    CompraComponent,
   ],
 
   imports: [

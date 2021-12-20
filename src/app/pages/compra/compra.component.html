@@ -1,0 +1,72 @@
+<div class="contenedorProducto">
+
+    <div class="contenedorImagen">
+        <img *ngIf="loading == true" src="assets/images/Loading.gif" alt="Loading..."> 
+        <img src={{producto.pictures[0].secure_url}}/>
+    </div>
+
+    <br>
+
+    <table *ngIf="loading == false">
+        <tr>
+            <td class="titulo">ID</td>
+            <td>{{producto._id}}</td>
+        </tr>
+        <tr>
+            <td class="titulo">Producto</td>
+            <td>{{producto.title}}</td>
+        </tr>
+        <tr>
+            <td class="titulo">Precio</td>
+            <td>{{producto.price | currency}}</td>
+        </tr>
+        <tr>
+            <td class="titulo">Descripcion</td>
+            <td>{{producto.description}}</td>
+        </tr>
+    
+        <tr>
+            <td class="titulo">Garantia</td>
+            <td>{{producto.warranty}}</td>
+          </tr>
+       
+        <tr>
+            <td class="titulo">Cantidad Disponible</td>
+            <td>{{producto.available_quantity}}</td>
+        </tr>
+    </table>
+
+      <br>
+      <br>
+
+    <div  class="contenedorTotal">
+        
+        <div class="hTot">
+            <label class="titulo">Cantidad Compra:</label>
+                
+                    {{cantidadCompra}}
+                    <button (click)="reducirCantidad()">
+                        -
+                    </button>
+                    <button (click)="incrementarCantidad()">
+                        +
+                    </button>
+                    {{mensajeStock}}
+                  
+        </div>
+    </div>
+
+    <div class="contenedorTotal">
+        <div class="hTot">
+            <label class="titulo">Total: </label>
+            {{total}}
+        </div>
+    </div>
+
+    <br>
+
+    <div class="contenedorButton">
+        <button routerLink="/compra/{{producto._id}}"> Confirmar Compra </button>    
+    </div>
+     
+</div>

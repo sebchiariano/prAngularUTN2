@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { userI } from 'src/app/interfaces/userI';
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -11,7 +12,8 @@ export class MenuComponent implements OnInit {
 
   isLogin:boolean = false;
 
-  usuarioLogueado:string;
+  userInfo= JSON.parse(localStorage.getItem("userInfo"));
+  usuarioLogueado="";
 
   constructor(private _usuarios:UsuariosService) { 
 
@@ -20,19 +22,23 @@ export class MenuComponent implements OnInit {
 
       this.isLogin=login;
 
-    
+      if(this.isLogin)
+      {
+        this.setLoggedUser()
+      }
 
     })
 
-    if(this.isLogin)
-    {
-      this.setLoggedUser()
-    }
+   
     
   }
 
 
   ngOnInit(): void {
+    if(this.userInfo)
+    {
+      this.usuarioLogueado=this.userInfo.email;
+    }
     
   }
 

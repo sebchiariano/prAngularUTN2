@@ -7,31 +7,16 @@
    </div>
 
    <div class="contenedorProductos1">
+
       <div *ngFor="let prod of productos ">
          <app-producto [producto]="prod" > </app-producto>
         
       </div>
+      
    </div>
    
    
    <br>
    <br>
 
-   <h5>Destacados</h5>
-
-   <div  class="contenedorLoading">
-      <img *ngIf="load == true" src="assets/images/Loading.gif" alt="Loading..."> 
-   </div>
-   
-   <div class="contenedorProductos2">
-      <div class="divBotonProductos2" *ngFor="let prod of productos " >
-   
-         <br>
-         <app-producto2 [producto]="prod" > </app-producto2>
-         <br>
-   
-      </div>
-   </div>
-   
-
-</div>
+  

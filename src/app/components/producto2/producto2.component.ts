@@ -9,7 +9,7 @@ import { Producto } from 'src/app/interfaces/Productos';
 export class Producto2Component implements OnInit {
 
   hoverClass:string="verDetalle";
-  @Input() producto:Producto;
+  @Input() producto;
 
   //CONSTRUCTOR
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

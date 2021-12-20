@@ -38,3 +38,21 @@ th, td {
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.479) ;
 }
   
+button{
+    margin: 0 auto;
+    padding:9px;
+    background-color: rgb(89, 89, 97);
+    color:white;
+}
+
+button:hover{
+    background-color: rgb(122, 122, 129);
+    color:white;
+}
+
+.contenedorButton {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

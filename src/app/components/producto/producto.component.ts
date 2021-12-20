@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Producto } from 'src/app/interfaces/Productos';
+import { Producto} from 'src/app/interfaces/Productos';
 
 @Component({
   selector: 'app-producto',
@@ -9,7 +9,7 @@ import { Producto } from 'src/app/interfaces/Productos';
 export class ProductoComponent implements OnInit {
 
   hoverClass:string="verDetalle";
-  @Input() producto:Producto;
+  @Input() producto:Producto;//
 
   //CONSTRUCTOR
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

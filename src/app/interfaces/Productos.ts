@@ -1,14 +1,15 @@
-export interface Producto{
-    id:number;
-    name:string;
-    description:string;
-    wholesale_price:number;
-    price:number;
-    photo_url:string;
-    stock:number;
-    sales:number;
-    active:number;
-    date_add:Date;
-    date_upd:Date;
-    bra_ite_fk:number;  
+export interface Producto {
+    _id:                string;
+    title:              string;
+    price:              number;
+    description:        string;
+    warranty:           string;
+    available_quantity: number;
+    pictures:           Picture[];
+    __v:                number;
+}
+
+export interface Picture {
+    _id:        string;
+    secure_url: string;
 }

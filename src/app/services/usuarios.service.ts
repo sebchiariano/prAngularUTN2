@@ -64,9 +64,10 @@ export class UsuariosService {
       this.authenticationState.next(true); //cambiar autenticacion estado a true
 
       localStorage.setItem("login","true");
-      localStorage.setItem("uidUser",value.user.uid);
+      //localStorage.setItem("uidUser",value.user.uid);
+      localStorage.setItem("userInfo",JSON.stringify({"uid":value.user.uid, "email":value.user.email}));
 
-      console.log("data", this.getUserData())
+      //console.log("data", this.getUserData())
       this.router.navigate(['/']);
 
       this.uidUser=value.user.uid;
