@@ -75,4 +75,18 @@ export class CompraComponent implements OnInit {
     }
     this.actualizarTotal();
   }
+
+  getMensajeCompra():string{
+    var mensajeCompra:string="Ha comprado "+this.cantidadCompra+" "+this.producto.title+" por un total de $"+this.total+". Gracias por su compra";
+
+    return mensajeCompra;
+  }
+
+  confirmarCompra():void{
+
+    alert(this.getMensajeCompra())
+
+    
+
+  }
 }

@@ -1,0 +1,13 @@
+.contenedorImagenes{
+    padding:5px;
+    margin:5px;
+    border-color: gray;
+}
+.mb-3{
+    margin:5px;
+}
+.datoInvalido{
+    font-size: 10px;
+    color: rgb(161, 161, 161);
+}
+ 

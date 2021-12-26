@@ -1,10 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+import { Producto } from 'src/app/interfaces/Productos';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    Authorization: 'my-auth-token'
+  })
+};
+
+const body = { title: 'Angular POST Request Example' };
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
+
+  
 
   //CONSTRUCTOR
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -29,6 +42,10 @@ export class ProductosService {
     return this.http.get("http://localhost:3000/products/"+id).toPromise();
   }
 
+  addProduct(product:Producto){
+    return this.http.post<Producto>("http://localhost:3000/products/", product, httpOptions);
+  }
+
   //JSONFY
   getAllProductsJSONFY(){
     return this.http.get("https://jsonfy.com/items").toPromise();
@@ -42,5 +59,8 @@ export class ProductosService {
   {
     return this.http.get("https://jsonfy.com/items/"+id).toPromise();
   }
+
+
+ 
 
 }

@@ -5,6 +5,20 @@
       </div>
       <ul class="nav navbar-nav">
         <li><a routerLink="/">Inicio</a></li>
+
+        <li class="dropdown" *ngIf="isLogin" >
+            <a class="dropdown-toggle" data-toggle="dropdown"> 
+                Productos 
+                <span class="caret"></span> 
+            </a>
+            <ul class="dropdown-menu">            
+            <li>
+                <a class="nav-item" routerLink="/AltaProducto" *ngIf="isLogin" >
+                    Alta Producto
+                </a>
+            </li>
+            </ul>
+        </li>
       </ul>
 
       

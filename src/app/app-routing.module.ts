@@ -7,11 +7,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { CompraComponent } from './pages/compra/compra.component'
+import { AltaProductoComponent } from './pages/ABMProductos/alta-producto/alta-producto.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"ingresar", component:LoginComponent},
   {path:"registrarse", component:RegistroComponent},
+  {path:"AltaProducto", component:AltaProductoComponent},
   {path:"detalle/:id",canActivate:[AuthGuard], component:DetalleComponent},
   {path:"compra/:id",canActivate:[AuthGuard], component:CompraComponent},
   {path:"404", component:E404Component},

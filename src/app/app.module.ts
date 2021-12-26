@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
+import { AltaProductoComponent } from './pages/ABMProductos/alta-producto/alta-producto.component';
 
 
 
@@ -42,6 +43,7 @@ import {MatMenuModule} from '@angular/material/menu';
     DetalleComponent,
     E404Component,
     CompraComponent,
+    AltaProductoComponent,
   ],
 
   imports: [
