@@ -3,6 +3,8 @@ import { FormControl,FormArray, FormBuilder, FormGroup, Validators } from '@angu
 import { Producto } from 'src/app/interfaces/Productos';
 import { ProductosService } from 'src/app/services/productos.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-alta-producto',
   templateUrl: './alta-producto.component.html',
@@ -20,7 +22,8 @@ export class AltaProductoComponent implements OnInit {
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   constructor(
     private formConstr: FormBuilder,
-    private _productosServ: ProductosService
+    private _productosServ: ProductosService,
+    private router: Router
 
     ) 
   { 
@@ -49,10 +52,21 @@ export class AltaProductoComponent implements OnInit {
   {
     console.log(this.miFormulario.value)
     this._productosServ.addProduct(this.miFormulario.value).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
+      (response) => {
+        //console.log(response);
+        alert("Se creo el producto con exito!");
+        this.miFormulario.reset();
+        //this.router.navigate(['/']);
+      },
+      (error) => {
+        console.log(error)
+        alert("Ocurrio un error!");
+      }
+     
     )
   }
+
+  
 
   createPicture(): FormGroup {
     return this.formConstr.group({

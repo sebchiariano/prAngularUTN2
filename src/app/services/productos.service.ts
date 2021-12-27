@@ -46,6 +46,14 @@ export class ProductosService {
     return this.http.post<Producto>("http://localhost:3000/products/", product, httpOptions);
   }
 
+  updateProduct(product:Producto,id){
+    return this.http.put<Producto>("http://localhost:3000/products/"+id, product, httpOptions);
+  }
+
+  deleteProduct(id){
+    return this.http.delete("http://localhost:3000/products/"+id);
+  }
+
   //JSONFY
   getAllProductsJSONFY(){
     return this.http.get("https://jsonfy.com/items").toPromise();

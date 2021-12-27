@@ -28,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { AltaProductoComponent } from './pages/ABMProductos/alta-producto/alta-producto.component';
+import { ModificacionProductoComponent } from './pages/ABMProductos/modificacion-producto/modificacion-producto.component';
 
 
 
@@ -44,6 +45,7 @@ import { AltaProductoComponent } from './pages/ABMProductos/alta-producto/alta-p
     E404Component,
     CompraComponent,
     AltaProductoComponent,
+    ModificacionProductoComponent,
   ],
 
   imports: [

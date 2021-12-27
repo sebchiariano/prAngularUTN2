@@ -56,3 +56,13 @@ button:hover{
     justify-content: center;
     align-items: center;
 }
+
+.deleteButton{
+    background-color: rgba(255, 0, 0, 0.74);
+    color: white;
+}
+
+.updateButton{
+    background-color: rgba(42, 158, 71, 0.74);
+    color: white;
+}

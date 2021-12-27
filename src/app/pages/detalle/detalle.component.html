@@ -40,5 +40,10 @@
       <div class="contenedorButton">
         <button routerLink="/compra/{{producto._id}}"> Comprar </button>    
       </div>
+
+      <div class="contenedorButtonsABM">
+        <button class="deleteButton" (click)="eliminarProducto()"> Eliminar </button>  
+        <button class="updateButton" routerLink="/ModificacionProducto/{{producto._id}}"> Modificar </button>  
+      </div>
      
 </div>
